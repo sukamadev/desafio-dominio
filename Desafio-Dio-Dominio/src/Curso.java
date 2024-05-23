@@ -1,28 +1,14 @@
-public class Curso {
-    private String titulo;
-    private String descricao;
+public class Curso extends Conteudo {
     private int cargahoraria;
+
+    @Override
+    public double calcularXp() {
+       return XP_PADRAO * cargahoraria;
+    }
 
     public Curso() {
     }
 
-
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public int getCargahoraria() {
         return cargahoraria;
@@ -36,8 +22,8 @@ public class Curso {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Curso{");
-        sb.append("titulo=").append(titulo);
-        sb.append(", descricao=").append(descricao);
+        sb.append("titulo=").append(getTitulo());
+        sb.append(", descricao=").append(getDescricao());
         sb.append(", cargahoraria=").append(cargahoraria);
         sb.append('}');
         return sb.toString();
